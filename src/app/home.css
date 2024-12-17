@@ -1,0 +1,276 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Section Wrapper */
+  .section-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+  
+  .hero-image-container {
+    position: relative;
+    width: 100%;
+    max-width: 1440px;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+    color: #666;
+    max-width: 600px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .button-container {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .button {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #000;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #333;
+  }
+  
+  /* Product Section */
+  .product-section {
+    padding: 2rem 2rem;
+  }
+  
+  .product-section h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+  
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .product-card {
+    text-align: center;
+  }
+  
+  .product-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .product-card h4 {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+  }
+  
+  .product-card p {
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .product-card span {
+    font-weight: bold;
+    display: block;
+    margin-top: 0.5rem;
+  }
+  
+  /* Featured Section */
+  .featured-section {
+    text-align: center;
+    margin: 2rem auto;
+  }
+  
+  .featured-section img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+  }
+  
+  .featured-section h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .featured-section p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1rem;
+  }
+  
+  .featured-button {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #000;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+  
+  .featured-button:hover {
+    background-color: #333;
+  }
+  
+  /* Gear Section */
+  .gear-section {
+    padding: 2rem 2rem;
+  }
+  
+  .gear-section h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+  }
+  
+  .gear-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .gear-card {
+    text-align: center;
+  }
+  
+  .gear-card h4 {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+  }
+  
+  .gear-card p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0.2rem 0;
+  }
+  
+  .gear-card span {
+    font-weight: bold;
+  }
+  
+  /* Don't Miss Section */
+  .dont-miss-section {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: #f5f5f5;
+    margin: 2rem 0;
+  }
+  
+  .dont-miss-section h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .dont-miss-section p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+  }
+  
+  .dont-miss-section img {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 1.5rem auto;
+    object-fit: cover;
+  }
+  
+  /* Essentials Section */
+  .essentials-section {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .essentials-section h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+  }
+  
+  .essentials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .essentials-card {
+    position: relative;
+    text-align: center;
+  }
+  
+  .essentials-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .essentials-label {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+  }
+  
+  /* Menu Section */
+  .menu-section {
+    padding: 2rem 2rem;
+  }
+  
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  
+  .menu-grid h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .menu-grid ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .menu-grid li {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+  }
+  

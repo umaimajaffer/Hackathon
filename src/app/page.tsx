@@ -1,101 +1,470 @@
+"use client";
+import styled from "styled-components";
 import Image from "next/image";
 
+// Styled Components
+const SectionWrapper = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-family: Arial, sans-serif;
+`;
+
+const HeroImageContainer = styled.div`
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  margin-bottom: 2rem;
+
+  Image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+`;
+
+const Title = styled.h2`
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+`;
+
+const Subtitle = styled.p`
+  font-size: 1rem;
+  color: #666;
+  max-width: 600px;
+  margin-bottom: 1.5rem;
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  gap: 1rem;
+`;
+
+const Button = styled.button`
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #000;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #333;
+  }
+`;
+
+const ProductSection = styled.section`
+  padding: 2rem 2rem;
+  font-family: Arial, sans-serif;
+
+  h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+`;
+
+const ProductGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+`;
+
+const ProductCard = styled.div`
+  text-align: center;
+
+  Image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  h4 {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  span {
+    font-weight: bold;
+    display: block;
+    margin-top: 0.5rem;
+  }
+`;
+
+const FeaturedSection = styled.section`
+  text-align: center;
+  margin: 2rem auto;
+  font-family: Arial, sans-serif;
+
+  Image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1rem;
+  }
+`;
+
+const FeaturedButton = styled.button`
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #000;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #333;
+  }
+`;
+
+const GearSection = styled.section`
+  padding: 2rem 2rem;
+  font-family: Arial, sans-serif;
+
+  h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+  }
+`;
+
+const GearGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+
+  Image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+`;
+
+const GearCard = styled.div`
+  text-align: center;
+
+  h4 {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0.2rem 0;
+  }
+
+  span {
+    font-weight: bold;
+  }
+`;
+
+const DontMissSection = styled.section`
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #f5f5f5;
+  margin: 2rem 0;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+  }
+
+  Image {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 1.5rem auto;
+    object-fit: cover;
+  }
+`;
+
+const EssentialsSection = styled.section`
+  padding: 2rem;
+  text-align: center;
+  font-family: Arial, sans-serif;
+
+  h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+  }
+`;
+
+const EssentialsGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+
+  Image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+`;
+
+const EssentialsCard = styled.div`
+  position: relative;
+  text-align: center;
+
+  h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+  }
+`;
+
+const EssentialsLabel = styled.span`
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+`;
+
+const MenuSection = styled.section`
+  padding: 2rem 2rem;
+  font-family: Arial, sans-serif;
+`;
+
+const MenuGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+
+  h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 0.5rem;
+    }
+  }
+`;
+
+
+// Main Component
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <>
+      {/* Section 1 */}
+      <SectionWrapper>
+        <HeroImageContainer>
+          <Image src="/assests/home secton 1.png" alt="Nike" width={1344} height={700} />
+        </HeroImageContainer>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        <div>
+          <p style={{ textTransform: "uppercase", fontSize: "0.9rem", color: "#666" }}>
+            First Look
+          </p>
+          <Title>NIKE AIR MAX PULSE</Title>
+          <Subtitle>
+            Extreme comfort. Hyper durable. Max volume. Introducing the Air Max Pulse &mdash; designed
+            to push you past your limits and help you go to the max.
+          </Subtitle>
+          <ButtonContainer>
+            <Button>Notify Me</Button>
+            <Button>Shop Air Max</Button>
+          </ButtonContainer>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </SectionWrapper>
+
+      {/* Section 2: Best of Air Max */}
+      <ProductSection>
+        <h3>Best of Air Max</h3>
+        <ProductGrid>
+          {/* Product 1 */}
+          <ProductCard>
+            <Image src="/assests/1.png" alt="Nike" width={441.36} height={441.36} />
+            <h4>Nike Air Max Pulse</h4>
+            <p>Women's Shoes</p>
+            <span>₹ 13,995</span>
+          </ProductCard>
+
+          {/* Product 2 */}
+          <ProductCard>
+            <Image src="/assests/2.png" alt="Nike" width={441.36} height={441.36} />
+            <h4>Nike Air Max Pulse</h4>
+            <p>Men's Shoes</p>
+            <span>₹ 13,995</span>
+          </ProductCard>
+
+          {/* Product 3 */}
+          <ProductCard>
+            <Image src="/assests/3.png" alt="Nike" width={441.36} height={441.36} />
+            <h4>Nike Air Max 97 SE</h4>
+            <p>Men's Shoes</p>
+            <span>₹ 16,995</span>
+          </ProductCard>
+        </ProductGrid>
+      </ProductSection>
+
+      {/* Section 3: Featured Section */}
+      <FeaturedSection>
+        <Image src="/assests/home section 3.png" alt="Nike" width={1344} height={700} />
+        <h2>STEP INTO WHAT FEELS GOOD</h2>
+        <p>Cause everyone should know the feeling of running in that perfect pair.</p>
+        <FeaturedButton>Find Your Shoe</FeaturedButton>
+      </FeaturedSection>
+
+      {/* Section 4: Gear Up */}
+      <GearSection>
+        <h3>Gear Up</h3>
+        <GearGrid>
+          {/* Card 1 */}
+          <GearCard>
+            <Image src="/assests/gear1.png" alt="Gear" width={441.36} height={441.36} />
+            <h4>Men's Training</h4>
+            <p>New Activewear</p>
+            <span>₹ 1,995</span>
+          </GearCard>
+
+          {/* Card 2 */}
+          <GearCard>
+            <Image src="/assests/gear2.png" alt="Gear" width={441.36} height={441.36} />
+            <h4>Women's Training</h4>
+            <p>New Activewear</p>
+            <span>₹ 1,495</span>
+          </GearCard>
+
+          {/* Card 3 */}
+          <GearCard>
+            <Image src="/assests/gear3.png" alt="Gear" width={441.36} height={441.36} />
+            <h4>Sports Gear</h4>
+            <p>All Accessories</p>
+            <span>₹ 2,995</span>
+          </GearCard>
+
+          {/* Card 4 */}
+          <GearCard>
+            <Image src="/assests/gear4.png" alt="Gear" width={441.36} height={441.36} />
+            <h4>Performance Training</h4>
+            <p>Complete Gear</p>
+            <span>₹ 2,495</span>
+          </GearCard>
+        </GearGrid>
+      </GearSection>
+
+      {/* Section 5: Don't Miss Out */}
+      <DontMissSection>
+        <Image src="/assests/home section 5.png" alt="Nike" width={1344} height={700} />
+        <h2>DON'T MISS OUT</h2>
+        <p>Get 20% off on your first order!</p>
+        <FeaturedButton>Get Started</FeaturedButton>
+      </DontMissSection>
+
+      {/* Section 6: Essentials */}
+      <EssentialsSection>
+        <h3>Essential Gear</h3>
+        <EssentialsGrid>
+          {/* Card 1 */}
+          <EssentialsCard>
+            <Image src="/assests/essentials1.png" alt="Essentials" width={441.36} height={441.36} />
+            <EssentialsLabel>Essential Clothing</EssentialsLabel>
+          </EssentialsCard>
+
+          {/* Card 2 */}
+          <EssentialsCard>
+            <Image src="/assests/essentials2.png" alt="Essentials" width={441.36} height={441.36} />
+            <EssentialsLabel>Sport Accessories</EssentialsLabel>
+          </EssentialsCard>
+
+          {/* Card 3 */}
+          <EssentialsCard>
+            <Image src="/assests/essentials3.png" alt="Essentials" width={441.36} height={441.36} />
+            <EssentialsLabel>Workout Equipment</EssentialsLabel>
+          </EssentialsCard>
+        </EssentialsGrid>
+      </EssentialsSection>
+
+      {/* Section 7: Menu */}
+      <MenuSection>
+        <h3>Shop Categories</h3>
+        <MenuGrid>
+          <div>
+            <h4>Men's Shoes</h4>
+            <ul>
+              <li>Nike Air Max</li>
+              <li>Nike SB</li>
+              <li>Running</li>
+              <li>Training</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4>Women's Shoes</h4>
+            <ul>
+              <li>Nike Air Max</li>
+              <li>Nike SB</li>
+              <li>Running</li>
+              <li>Training</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4>Activewear</h4>
+            <ul>
+              <li>Men's Training</li>
+              <li>Women's Training</li>
+              <li>New Activewear</li>
+              <li>All Accessories</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4>Sports Gear</h4>
+            <ul>
+              <li>Performance Gear</li>
+              <li>Essential Gear</li>
+              <li>New Arrivals</li>
+              <li>Top Picks</li>
+            </ul>
+          </div>
+        </MenuGrid>
+      </MenuSection>
+    </>
   );
 }
