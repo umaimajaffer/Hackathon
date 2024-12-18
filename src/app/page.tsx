@@ -320,7 +320,7 @@ export default function Home() {
           <ProductCard>
             <Image src="/assests/1.png" alt="Nike" width={441.36} height={441.36} />
             <h4>Nike Air Max Pulse</h4>
-            <p>Women's Shoes</p>
+            <p>Women&aposs Shoes</p>
             <span>₹ 13,995</span>
           </ProductCard>
 
@@ -328,7 +328,7 @@ export default function Home() {
           <ProductCard>
             <Image src="/assests/2.png" alt="Nike" width={441.36} height={441.36} />
             <h4>Nike Air Max Pulse</h4>
-            <p>Men's Shoes</p>
+            <p>Men&aposs Shoes</p>
             <span>₹ 13,995</span>
           </ProductCard>
 
@@ -336,7 +336,7 @@ export default function Home() {
           <ProductCard>
             <Image src="/assests/3.png" alt="Nike" width={441.36} height={441.36} />
             <h4>Nike Air Max 97 SE</h4>
-            <p>Men's Shoes</p>
+            <p>Men&aposs Shoes</p>
             <span>₹ 16,995</span>
           </ProductCard>
         </ProductGrid>
@@ -357,7 +357,7 @@ export default function Home() {
           {/* Card 1 */}
           <GearCard>
             <Image src="/assests/gear1.png" alt="Gear" width={441.36} height={441.36} />
-            <h4>Men's Training</h4>
+            <h4>Men&aposs Training</h4>
             <p>New Activewear</p>
             <span>₹ 1,995</span>
           </GearCard>
@@ -365,7 +365,7 @@ export default function Home() {
           {/* Card 2 */}
           <GearCard>
             <Image src="/assests/gear2.png" alt="Gear" width={441.36} height={441.36} />
-            <h4>Women's Training</h4>
+            <h4>Women&aposs Training</h4>
             <p>New Activewear</p>
             <span>₹ 1,495</span>
           </GearCard>
@@ -388,10 +388,10 @@ export default function Home() {
         </GearGrid>
       </GearSection>
 
-      {/* Section 5: Don't Miss Out */}
+      {/* Section 5: Don&apost Miss Out */}
       <DontMissSection>
         <Image src="/assests/home section 5.png" alt="Nike" width={1344} height={700} />
-        <h2>DON'T MISS OUT</h2>
+        <h2>DON&aposT MISS OUT</h2>
         <p>Get 20% off on your first order!</p>
         <FeaturedButton>Get Started</FeaturedButton>
       </DontMissSection>
@@ -425,7 +425,7 @@ export default function Home() {
         <h3>Shop Categories</h3>
         <MenuGrid>
           <div>
-            <h4>Men's Shoes</h4>
+            <h4>Men&aposs Shoes</h4>
             <ul>
               <li>Nike Air Max</li>
               <li>Nike SB</li>
@@ -435,7 +435,7 @@ export default function Home() {
           </div>
 
           <div>
-            <h4>Women's Shoes</h4>
+            <h4>Women&aposs Shoes</h4>
             <ul>
               <li>Nike Air Max</li>
               <li>Nike SB</li>
@@ -447,8 +447,8 @@ export default function Home() {
           <div>
             <h4>Activewear</h4>
             <ul>
-              <li>Men's Training</li>
-              <li>Women's Training</li>
+              <li>Men&aposs Training</li>
+              <li>Women&aposs Training</li>
               <li>New Activewear</li>
               <li>All Accessories</li>
             </ul>
